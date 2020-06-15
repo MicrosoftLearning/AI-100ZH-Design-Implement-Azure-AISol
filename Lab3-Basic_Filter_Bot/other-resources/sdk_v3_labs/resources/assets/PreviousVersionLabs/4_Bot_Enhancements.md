@@ -1,13 +1,13 @@
-﻿## 4_机器人增强：
+﻿## 4_Bot_Enhancements：
 预计用时：20-30 分钟
 
-### 实验：正则表达式和可得分组
+### 实验室: 正则表达式和可得分组
 
 我们可以进行许多操作来改进机器人。首先，我们可能不想只为了实现简单的问候“hi”而调用 LUIS，机器人将经常从它的用户那里收到此问候语。  一个简单的正则表达式可以满足此需求，并节省我们的时间（由于网络延迟）和费用（调用 LUIS 服务产生的费用）。  
 
-此外，随着我们机器人复杂程度的加深，我们将接受用户的输入并使用多种服务来解释它，因此，我们需要一个过程来管理此流。  例如，首先尝试使用正则表达式，如果不匹配，则调用 LUIS，随后我们也可以继续尝试其他服务，例如 [QnA Maker](http://qnamaker.ai) 和 Azure 搜索。  管理此流的一个好方法是 [ScorableGroups](https://blog.botframework.com/2017/07/06/Scorables/)。 ScorableGroups 为你提供了一个属性，用于对这些服务调用强制执行排序操作。  在我们的代码中，让我们首先对正则表达式强制执行匹配顺序，然后调用 LUIS 来解释言语，最终，最低优先级为使用通用响应“I'm not sure what you mean”。    
+此外，随着我们机器人复杂程度的加深，我们将接受用户的输入并使用多种服务来解释它，因此，我们需要一个过程来管理此流。  例如，首先尝试使用正则表达式，如果不匹配，则调用 LUIS，随后我们也可以继续尝试其他服务，例如 [QnA Maker](http://qnamaker.ai) 和 Azure 认知搜索。  管理此流的一个好方法是 [ScorableGroups](https://blog.botframework.com/2017/07/06/Scorables/)。  ScorableGroups 为你提供了一个属性，用于对这些服务调用强制执行排序操作。  在我们的代码中，让我们首先对正则表达式强制执行匹配顺序，然后调用 LUIS 来解释言语，最终，最低优先级为使用通用响应“I'm not sure what you mean”。    
 
-若要使用 ScorableGroups，你的 RootDialog 需要从 DispatchDialog 而不是 LuisDialog 继承（但仍然可以在类上保留 LuisModel 属性）。 还需要一个对 Microsoft.Bot.Builder.Scorables（以及其他）的引用。 因此，请在 RootDialog.cs 文件中添加：
+若要使用 ScorableGroups，你的 RootDialog 需要从 DispatchDialog 而不是 LuisDialog 继承（但仍然可以在类上保留 LuisModel 属性）。  还需要一个对 Microsoft.Bot.Builder.Scorables（以及其他）的引用。  因此，请在 RootDialog.cs 文件中添加：
 
 ```csharp
 
@@ -20,11 +20,11 @@ using System.Collections.Generic;
 
 ```csharp
 
-    public class RootDialog : DispatchDialog <object>
+    public class RootDialog : DispatchDialog<object>
 
 ```
 
-然后，让我们在 ScorableGroup 0 中添加一些匹配正则表达式的新方法作为第一优先级。 在 RootDialog 类的开头添加以下内容：
+然后，让我们在 ScorableGroup 0 中添加一些匹配正则表达式的新方法作为第一优先级。  在 RootDialog 类的开头添加以下内容：
 
 ```csharp
 
@@ -63,7 +63,7 @@ using System.Collections.Generic;
                     await OrderPic(context, null);
                     break;
                 default:
-                    await context.PostAsync("I'm sorry.I didn't understand you.");
+                    await context.PostAsync("I'm sorry. I didn't understand you.");
                     break;
             }
         }
@@ -72,9 +72,9 @@ using System.Collections.Generic;
 
 这段代码将匹配用户以“hi”、“hello”和“help”开头的表达。  请注意，当用户请求帮助时，我们会向他/她提供一个简单的按钮菜单，其中包括我们的机器人可以执行的三项核心操作：搜索图片、共享图片和订购打印件。  
 
-> 有趣的是：有人可能会争论说，用户应该不必键入“help”即可获得一个清楚明了的选项菜单，其中包含机器人可以执行的操作；更确切地说，这应该是第一次接触机器人时的默认体验。**可发现性** 是机器人面临的最大挑战之一 - 让用户了解机器人能够做什么。  优秀的[机器人设计原则](https://docs.microsoft.com/zh-cn/bot-framework/bot-design-principles)可能有所帮助。   
+> 有趣的是：有人可能会争论说，用户应该不必键入“help”即可获得一个清楚明了的选项菜单，其中包含机器人可以执行的操作；更确切地说，这应该是第一次接触机器人时的默认体验。**可发现性**是机器人面临的最大挑战之一 - 让用户了解机器人能够做什么。  优秀的[机器人设计原则](https://docs.microsoft.com/zh-cn/bot-framework/bot-design-principles)可能有所帮助。   
 
-在 ScorableGroup 1 中，如果没有正则表达式匹配，我们将调用 LUIS 作为第二次尝试。  
+在 Scorable Group 1 中，如果没有匹配的正则表达式，这个设置使我们调用 LUIS 作为第二次尝试。  
 
 LUIS 中的“None”意图意味着言语没有映射到任何意图。  在这种情况下，我们则需要使优先级下降到 ScorableGroup 的下一个级别。  修改 RootDialog 类中的“None”方法，如下所示：
 
@@ -165,7 +165,7 @@ LUIS 中的“None”意图意味着言语没有映射到任何意图。  在这
         [ScorableGroup(2)]
         public async Task Default(IDialogContext context, IActivity activity)
         {
-            await context.PostAsync("I'm sorry.I didn't understand you.");
+            await context.PostAsync("I'm sorry. I didn't understand you.");
             await context.PostAsync("You can tell me to find photos, tweet them, and order prints.  Here is an example: \"find pictures of food\".");
         }
 
@@ -191,7 +191,7 @@ LUIS 中的“None”意图意味着言语没有映射到任何意图。  在这
 
 ### 实验：使用机器人连接器注册机器人
 
-转到 Web 浏览器并导航到 [http://dev.botframework.com](http://dev.botframework.com)。 单击[注册机器人](https://dev.botframework.com/bots/new)。填写机器人的名称、句柄和描述。 消息终结点将为 Azure 网站 URL，其末尾附加了“api/messages”，如 https://testpicturebot.azurewebsites.net/api/messages。  
+请转到 Web 浏览器并导航到 [http://dev.botframework.com](http://dev.botframework.com)。  单击[注册机器人](https://dev.botframework.com/bots/new)。填写机器人的名称、句柄和描述。  消息终结点将为 Azure 网站 URL，其末尾附加了“api/messages”，如 https://testpicturebot.azurewebsites.net/api/messages。  
 
 ![机器人注册](./resources/assets/BotRegistration.jpg) 
 
@@ -201,7 +201,7 @@ LUIS 中的“None”意图意味着言语没有映射到任何意图。  在这
 
 在机器人注册页面上，你的应用 ID 应该已自动填写。你可以选择添加 AppInsights 检测密钥，以便从机器人进行日志记录。如果你同意服务条款，请选中此框，然后单击“注册”。  
 
-然后，你将进入机器人的仪表板页，其 URL 类似于 https://dev.botframework.com/bots?id=TestPictureBot， 但使用你自己的机器人名称。在这里，我们可以启用各种通道。 Skype 和 Web 聊天两个通道将自动启用。  
+然后，你将进入机器人的仪表板页，其 URL 类似于 https://dev.botframework.com/bots?id=TestPictureBot，但使用你自己的机器人名称。在这里，我们可以启用各种通道。  Skype 和 Web 聊天两个通道将自动启用。  
 
 最后，你需要使用其注册信息更新你的机器人。  返回 Visual Studio 并打开 Web.config。  使用应用名称更新 BotId，使用应用 ID 更新 MicrosoftAppId，使用从机器人注册站点获得的应用密码更新 MicrosoftAppPassword。  
 
@@ -215,7 +215,7 @@ LUIS 中的“None”意图意味着言语没有映射到任何意图。  在这
 
 重新构建项目，然后在“解决方案资源管理器”中右键单击该项目，再次选择“发布”。  上次的设置应该已有记录，因此只需点击“发布”即可。 
 
-> 出现了指向 MicrosoftAppPassword 的错误？由于该文件为 XML 格式，因此，如果密钥包含“&”、“<”、“>”、“'”或“"”，则需要将它们替换为各自的[转义字符](https://en.wikipedia.org/wiki/XML#Characters_and_escaping) ：“&amp;”、“&lt”、“&gt;”、“&apos;”、“&quot;”。 
+> 出现了指向 MicrosoftAppPassword 的错误？由于该文件为 XML 格式，因此，如果密钥包含“&”、“<”、“>”、“'”或“"”，则需要将它们替换为各自的[转义字符](https://en.wikipedia.org/wiki/XML#Characters_and_escaping)：“&amp;”、“&lt”、“&gt;”、“&apos;”、“&quot;”。 
 
 导航回机器人的仪表板（类似于 https://dev.botframework.com/bots?id=TestPictureBot）。  尝试在聊天窗口中与它交谈。  Web 聊天中的传送可能与仿真器看起来不同。  https://docs.botframework.com/en- us/channelinspector/channels/skype/# navtitle 中有一个很好用的工具，名为 Channel Inspector，可以使用它来查看不同通道中不同控件的用户体验。  
 你可以在机器人的仪表板中可以添加其他通道，并且可在 Skype、Facebook Messenger 或 Slack 中试用你的机器人。  只需单击机器人仪表板上频道名称右侧的“添加”按钮，然后按照说明操作即可。
