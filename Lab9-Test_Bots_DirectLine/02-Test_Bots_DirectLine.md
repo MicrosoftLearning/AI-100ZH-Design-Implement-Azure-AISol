@@ -306,7 +306,7 @@ namespace PictureBotDL
 
 1. 请务必在类型处选择 **“GET”**
 
-1. 在 URL 处输入 **“https://directline.botframework.com/api/conversations/{conversationId}/messages”**。  请务必将其中的 converstationId 替换为你的特定对话 ID
+1. 在 URL 处输入 **“https://directline.botframework.com/api/conversations/{conversationId}/messages”**。 请务必将其中的 converstationId 替换为你的特定对话 ID
 
 1. 选择 **“授权”**，在类型处选择 **“持有者令牌”**
 

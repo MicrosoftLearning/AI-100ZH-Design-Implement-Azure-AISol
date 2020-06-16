@@ -14,7 +14,7 @@
 
 虽然重点是认知服务，但你还将使用 Visual Studio 2019。
 
-> **注意：**如果你还没有帐户，请按照指示创建 Azure 帐户和认知服务，并在 [Lab1-Technical_Requirements.md](../Lab1-Technical_Requirements/02-Technical_Requirements.md) 中获取 API 密钥。
+> **注意：** 如果你还没有帐户，请按照指示创建 Azure 帐户和认知服务，并在 [Lab1-Technical_Requirements.md](../Lab1-Technical_Requirements/02-Technical_Requirements.md) 中获取 API 密钥。
 
 ## 实验 2.1：体系结构
 
@@ -74,7 +74,7 @@
 
 1. 在 **ProcessingLibrary** 项目中，导航到 **ImageInsights.cs** 文件。
 
-你可以看到图像中有`Caption`和`Tags`的属性，还有一个惟一的“ImageId”。“ImageInsights”从计算机视觉 API 收集信息。
+你可以看到图像中有`Caption`和`Tags`的属性，还有一个惟一的`ImageId`。“ImageInsights”从计算机视觉 API 收集信息。
 
 现在让我们退回一步。它不像创建“ImageInsights”类以及从服务帮助程序处复制某些方法/错误处理那么简单。我们仍需调用 API 并在某处处理图像。出于这个实验的目的，我们将逐步创建 `ImageProcessor.cs`，但在未来的项目中，可随时将这个类添加到 PCL 并从那里开始操作（根据要调用的认知服务和要处理的图像、文本、语音等内容，将需要对它进行修改）。
 
@@ -172,12 +172,12 @@ Cosmos DB 不是这个实验的重点，但如果你对将要进行的操作感�
 1. 在 **TestCLI** 项目中，打开 **settings.json** 文件	
 1. 从 [Lab1-Technical_Requirements.md](../Lab1-Technical_Requirements/02-Technical_Requirements.md) 添加特定的环境设置	
 
-> **注意：**对于牛津项目 API，认知服务的 URL 应以 **/vision/v1.0** 结尾。  例如 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`。	
+> **注意：** 对于牛津项目 API，认知服务的 URL 应以 **/vision/v1.0** 结尾。  例如 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`。	
 
 1. 如果你尚未这样操作，请编译项目	
 1. 打开命令提示符，并导航到 **TestCLI** 项目的生成目录。  该生成目录类似于 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Starter\TestCLI**。
 
-> **注意：**请勿导航到调试目录	
+> **注意：** 请勿导航到调试目录	
 
 1. 运行命令 **dotnet run**	
 ```cmd	
@@ -193,7 +193,7 @@ Options:
 ```cmd	
 dotnet run -- -process <%GitHubDir%>\AI-100-Design-Implement-Azure-AISol\Lab2-Implement_Computer_Vision\sample_images	
 ```	
-> **注意：**将 <%GitHubDir%> 值替换为在其中克隆存储库的文件夹。	
+> **注意：** 将 <%GitHubDir%> 值替换为在其中克隆存储库的文件夹。	
 完成处理后，可直接使用 TestCLI__ 查询 Cosmos DB，如下所示：	
 ```cmd	
 dotnet run -- -query "select * from images"	

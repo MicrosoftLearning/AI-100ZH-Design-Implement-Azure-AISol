@@ -75,7 +75,7 @@ IStorage dataStore = new Microsoft.Bot.Builder.Azure.AzureBlobStorage(blobConnec
 
 1. 检查是否存在 **chatlog**容器，如果不存在，单击 **“+ 容器”**：
 
-- 对于名称，键入**“chatlog”**，单击 **“确定”**
+- 对于名称，键入 **“chatlog”**，单击 **“确定”**
 
 1. 如果尚未执行此操作，请单击 **“访问键”** 并记录连接字符串
 
@@ -153,7 +153,7 @@ state.UtteranceList.Add(utterance);
 await _accessors.ConversationState.SaveChangesAsync(turnContext);
 ```
 
-> **注意：**如果修改了状态，则必须保存状态
+> **注意：** 如果修改了状态，则必须保存状态
 
 第一行接收用户传入的消息并将其存储在名为 `utterance` 的变量中。下一行将言语添加到在 PictureState.cs 中创建的现有列表中。
 

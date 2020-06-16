@@ -176,7 +176,7 @@ default:
 
 ## **友情提示**
 
-如果希望在先前补充的 LUIS 模型与搜索 [培训] (https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab01.5-luis) 的基础上，尝试集成 LUIS 机器人（包括 Azure 认知搜索），请按以下培训资料操作：[Azure 认知搜索](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab02.1-azure_search)和 [Azure 认知搜索机器人](https://github.com/Azure/LearnAI-Bootcamp/blob/master/lab02.2-building_bots/2_Azure_Search.md)。
+如果希望在先前补充的 LUIS 模型与搜索 [培训](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab01.5-luis) 的基础上，尝试集成 LUIS 机器人（包括 Azure 认知搜索），请按以下培训资料操作：[Azure 认知搜索](https://github.com/Azure/LearnAI-Bootcamp/tree/master/lab02.1-azure_search)和 [Azure 认知搜索机器人](https://github.com/Azure/LearnAI-Bootcamp/blob/master/lab02.2-building_bots/2_Azure_Search.md)。
 
 ## 后续步骤
 

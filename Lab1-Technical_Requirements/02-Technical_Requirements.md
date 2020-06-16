@@ -165,7 +165,7 @@
 
 1. 转到[此页面](https://github.com/Microsoft/BotFramework-Emulator/releases)并下载带有“4.6.0”或更高版本标记的最新版模拟器（如果使用的是 Windows，请选择“*-windows-setup.exe”文件）。
 
-> **注：**模拟器的安装位置为
+> **注：** 模拟器的安装位置为
 `"C:\Users\_your-username\AppData\Local\Programs\@bfemulatormain\Bot Framework Emulator.exe"`，但也可以在开始菜单中搜索 **“bot framework”** 以访问它。
 
 ## 学分

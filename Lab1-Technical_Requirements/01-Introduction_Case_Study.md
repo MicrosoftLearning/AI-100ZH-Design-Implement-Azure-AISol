@@ -42,7 +42,7 @@ Adventure Works Cycles 是一家大型跨国制造公司。它制造自行车和
 
 我们将仅提供用于使用必应搜索的上下文，以使客户能够在与机器人交互期间访问其他数据，但在实验期间不会实现这些方案。参与者会受邀阅读关于[必应 Web 搜索](https://azure.microsoft.com/zh-cn/services/cognitive-services/directory/search/)服务的更多信息。
 
-虽然超出了这个实验的范围，但这个体系结构会集成 Azure 的数据解决方案，通过 [Blob 存储]((https://docs.microsoft.com/zh-cn/azure/storage/storage-dotnet-how-to-use-blobs)和 [Cosmos DB](https://azure.microsoft.com/zh-cn/services/cosmos-db/) 管理这个体系结构中图像和元数据的存储。
+虽然超出了这个实验的范围，但这个体系结构会集成 Azure 的数据解决方案，通过 [Blob 存储](https://docs.microsoft.com/zh-cn/azure/storage/storage-dotnet-how-to-use-blobs)和 [Cosmos DB](https://azure.microsoft.com/zh-cn/services/cosmos-db/) 管理这个体系结构中图像和元数据的存储。
 
 ![体系结构图](../images/AI_Immersion_Arch.png)
 
