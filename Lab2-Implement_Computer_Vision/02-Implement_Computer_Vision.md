@@ -174,12 +174,12 @@ Cosmos DB 不是这个实验室的重点，但如果你对将要进行的操作�
 1. 在 **TestCLI** 项目中，打开 **settings.json** 文件	
 1. 从 [Lab1-Technical_Requirements.md](../Lab1-Technical_Requirements/02-Technical_Requirements.md) 添加特定的环境设置	
 
-> **注意：**对于牛津项目 API，认知服务的 URL 应以 **/vision/v1.0** 结尾。  例如 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`。	
+> **注意：** 对于牛津项目 API，认知服务的 URL 应以 **/vision/v1.0** 结尾。  例如 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`。	
 
 1. 如果你尚未这样操作，请编译项目	
 1. 打开命令提示符，并导航到 **TestCLI** 项目的生成目录。  该生成目录类似于 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Starter\TestCLI**。
 
-> **注意：**请勿导航到调试目录	
+> **注意：** 请勿导航到调试目录	
 
 1. 运行命令 **dotnet run**	
 ```cmd	
@@ -195,7 +195,7 @@ Options:
 ```cmd	
 dotnet run -- -process <%GitHubDir%>\AI-100-Design-Implement-Azure-AISol\Lab2-Implement_Computer_Vision\sample_images	
 ```	
-> **注意：**将 <%GitHubDir%> 值替换为在其中克隆存储库的文件夹。	
+> **注意：** 将 <%GitHubDir%> 值替换为在其中克隆存储库的文件夹。	
 完成处理后，可直接使用 TestCLI__ 查询 Cosmos DB，如下所示：	
 ```cmd	
 dotnet run -- -query "select * from images"	
