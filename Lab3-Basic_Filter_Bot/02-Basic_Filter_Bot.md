@@ -82,7 +82,7 @@
 
 1. 向下滚动，直到看到 **“Echo Bot (Bot Framework v4)”**
 
->[!CAUTION]
+>[!警告]
 >根据安装的 Visual Studio 版本，以下屏幕截图可能你您自己的不同。  如果你看到 Echo Bot 模板列出了多个版本，请选择 3.1 版而不是 2.1 版。
 
 ![选择 Echo Bot 项目模板](../images/NewBotProject.png)
