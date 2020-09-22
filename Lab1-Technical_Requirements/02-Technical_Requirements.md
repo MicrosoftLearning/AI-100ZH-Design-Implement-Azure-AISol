@@ -18,7 +18,7 @@
 
 ### 环境设置
 
-这些实验室将使用 [Visual Studio 2019](https://www.visualstudio.com/downloads/) 与 .NET 框架一起使用。  最初的研讨会是为使用 Azure 数据科学虚拟机 (DSVM) 而设计的，并用它进行了测试。  只有高级 Azure 订阅才能真正在 Azure 上创建 DSVM 资源，但实验室可以在运行 Visual Studio 2019 的本地计算机上完成，并在实验室步骤中列出所需的软件下载。
+这些实验室旨在与 .NET Framework（其使用在 Microsoft Windows 操作系统上运行的 [Visual Studio 2019](https://www.visualstudio.com/downloads/)）一起使用。虽然存在用于 Mac OS 的 Visual Studio 版本，但是 Mac OS 平台不支持示例代码中的某些功能。因此，可以使用虚拟机解决方案提供托管实验室选项。你的讲师将提供有关使用 VM 解决方案的详细信息。最初的研讨会旨在用于 Data Science Virtual Machine (DSVM)，并使用 DSVM 对其进行了测试。只有高级 Azure 订阅才能在 Azure 上实际创建 DSVM 资源，但实验室可通过运行 Visual Studio 2019 的本地计算机完成，并在整个实验步骤中列出所需的软件下载。
 
 ### 需要的 URL 和密钥
 
@@ -65,7 +65,7 @@
 
 1. 选择 **“创建”**
 
-1. 导航到新资源，选择 **“快速入门”**
+1. 导航到新资源，在左侧工具栏**“资源管理器”**部分，选择**“键和终结点”**
 
 1. 将 **API 密钥**和**终结点的 URL**复制到记事本
 

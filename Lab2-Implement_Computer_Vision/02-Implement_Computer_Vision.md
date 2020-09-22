@@ -26,7 +26,7 @@
 
 ## 实验室 2.2：资源
 
-[主要](https://github.com/MicrosoftLearning/AI-100-Design-Implement-Azure-AISol/blob/master/Lab2-Implement_Computer_Vision/) github 存储库文件夹中有一些目录：
+[主要](https://github.com/MicrosoftLearning/AI-100ZH-Design-Implement-Azure-AISol/blob/master/Lab2-Implement_Computer_Vision/) github 存储库文件夹中有一些目录：
 
 - **sample_images**：一些示例图像用于测试认知服务的实现。
 
@@ -177,9 +177,11 @@ Cosmos DB 不是这个实验室的重点，但如果你对将要进行的操作�
 > **注意：** 对于牛津项目 API，认知服务的 URL 应以 **/vision/v1.0** 结尾。  例如 `https://westus2.api.cognitive.microsoft.com/vision/v1.0`。	
 
 1. 如果你尚未这样操作，请编译项目	
-1. 打开命令提示符，并导航到 **TestCLI** 项目的生成目录。  该生成目录类似于 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Starter\TestCLI**。
+1. 打开命令提示符，并导航到 **TestCLI** 项目的生成目录。  该生成目录类似于 **{GitHubDir}\Lab2-Implement_Computer_Vision\code\Finished\TestCLI**。
 
-> **注意：** 请勿导航到调试目录	
+> **注意：** 请勿导航到调试目录
+
+> **备注:** 需要 .net core 2.2，安装程序可以参见 https://dotnet.microsoft.com/download/dotnet-core/2.2	
 
 1. 运行命令 **dotnet run**	
 ```cmd	
