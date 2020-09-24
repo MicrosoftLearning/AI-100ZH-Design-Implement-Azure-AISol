@@ -4,7 +4,7 @@
 
 这个实验适用于使用 Azure 的人工智能 (AI) 工程师或 AI 开发人员。为确保你有时间完成练习，在开始这个课程的实验之前，需要满足一些要求。
 
-理想情况下，你之前应接触过 Visual Studio。我们将把它用于在实验中构建的所有内容，因此你应熟悉如何使用它创建应用程序。此外，这不是我们教授代码或开发的课程。我们假设你熟悉 C#（中级水平 - 你可以在[这里](https://mva.microsoft.com/zh-cn/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)和[这里](https://docs.microsoft.com/zh-cn/dotnet/csharp/quick-starts/)学习）。
+理想情况下，你之前应接触过 Visual Studio。我们将把它用于在实验中构建的所有内容，因此你应熟悉[如何使用它](https://docs.microsoft.com/zh-cn/visualstudio/ide/visual-studio-ide)创建应用程序。此外，这不是我们教授代码或开发的课程。我们假设你熟悉 C#（中级水平 - 你可以在[这里](https://mva.microsoft.com/zh-cn/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)和[这里](https://docs.microsoft.com/zh-cn/dotnet/csharp/quick-starts/)学习）。
 
 ### 帐户设置
 
@@ -65,7 +65,7 @@
 
 1. 选择 **“创建”**
 
-1. 导航到新资源，在左侧工具栏**“资源管理器”**部分，选择**“键和终结点”**
+1. 导航到新资源，在左侧工具栏 **“资源管理器”** 部分，选择 **“键和终结点”**
 
 1. 将 **API 密钥**和**终结点的 URL**复制到记事本
 

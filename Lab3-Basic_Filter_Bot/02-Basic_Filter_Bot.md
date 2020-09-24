@@ -5,10 +5,10 @@
 每一项新技术在带来许多机遇的同时也会带来许多问题，AI 支持的技术有其独特的注意事项。
 在设计和实现 AI 工具时，请注意以下 AI 道德准则：
 
-1. 公平性**：在不损害尊严的情况下最大限度地提高效率
-1. 责任性**：AI 必须对其算法负责
-1. 透明度**：防止偏见和对人类尊严的损害
-1. 合乎道德的应用程序**：AI 必须帮助人类，并且针对智能隐私而设计
+1. *公平性*：在不损害尊严的情况下最大限度地提高效率
+1. *责任性*：AI 必须对其算法负责
+1. *透明度*：防止偏见和对人类尊严的损害
+1. *合乎道德的应用程序*：AI 必须帮助人类，并且针对智能隐私而设计
 
 建议[深入了解](https://ai-ethics.azurewebsites.net/)生成智能应用时的道德考虑因素。
 
@@ -89,7 +89,7 @@
 
 1. 选择 **“下一步”**
 
-> **注意：**如果未看到 Echo Bot 模板，则需要按照必备条件中的步骤安装 Visual Studio 加载项。
+> **注意：** 如果未看到 Echo Bot 模板，则需要按照必备条件中的步骤安装 Visual Studio 加载项。
 
 1. 对于名称，输入 **PictureBot**，然后选择 **“创建”**
 
@@ -130,7 +130,7 @@
 我们已更新基础 shell 以支持命名和将在其余实验室中使用的 NuGet 包，现在已准备好开始添加一些自定义代码。首先，我们将创建一个简单的“Hello world”机器人，它将帮助你熟悉如何使用 V4 SDK 生成机器人。
 
 有一个重要的概念是`回合`，用于说明用户的消息和来自机器人的响应。
-例如，如果我说“机器人你好”，并且机器人响应“嗨，你好吗？”，那就是**一个**回合。查看下面的图片，了解一个回合是如何在机器人应用程序的多个层中完成的。
+例如，如果我说“机器人你好”，并且机器人响应“嗨，你好吗？”，那就是**一个**回合。查看下面的图片，了解一个**回合**是如何在机器人应用程序的多个层中完成的。
 
 ![机器人概念](../images/bots-concepts-middleware.png)
 
@@ -146,7 +146,7 @@
 
 * 记下网页的 localhost 端口号。这应该（并且必须）与模拟器中的终结点匹配。
 
->卡住或中断？到目前为止，可以在 [{GitHubPath}/code/Finished/PictureBot-Part0](./code/Finished/PictureBot-Part0) 下找到适用于本实验的解决方案。解决方案中的自述文件（你打开它后）将告诉你需要添加哪些密钥才能运行解决方案。
+>卡住或中断？到目前为止，可以在 {GitHubPath}/code/Finished/PictureBot-Part0 下找到适用于本实验的解决方案。解决方案中的自述文件（你打开它后）将告诉你需要添加哪些密钥才能运行解决方案。
 
 #### 使用 Bot Framework Emulator
 
@@ -162,7 +162,7 @@
 
 * 输入已输入到 appsettings.json 中的 AppId 和应用机密
 
-> **注意：**如果未在机器人设置中输入 ID 和机密值，则也不需要在机器人仿真器中输入该值
+> **注意：** 如果未在机器人设置中输入 ID 和机密值，则也不需要在机器人仿真器中输入该值
 
 * 选择 **“保存并连接”**，然后将 .bot 文件保存在本地
 
@@ -170,7 +170,7 @@
 
 * 键入 **“hello”**。该机器人将通过回应你的消息做出响应，类似于我们之前创建的 Azure 机器人。
 
-> **注意：**可以选择“重启对话”以清除对话历史记录。
+> **注意：** 可以选择“重启对话”以清除对话历史记录。
 
 ![机器人仿真器](../images/botemulator3.png)
 
@@ -192,7 +192,7 @@
 
 1. 再次导航到 **Startup.cs** 文件
 
-1. 通过添加以下内容来更新 `using` 语句列表：
+1. 通过**添加**以下内容来更新 `using` 语句列表：
 
 ```csharp
 using System;
@@ -265,8 +265,8 @@ services.AddBot<PictureBot.Bots.PictureBot>(options =>
     // 捕捉对话回合过程中发生的所有错误并记录下来。
     options.OnTurnError = async (context, exception) =>
     {
-        logger.LogError($"捕获到的异常: {exception}");
-        await context.SendActivityAsync("抱歉，似乎出现了问题。");
+        logger.LogError($"Exception caught : {exception}");
+        await context.SendActivityAsync("Sorry, it looks like something went wrong.");
     };
 
     // 此处使用的内存存储仅用于本地机器人调试。重启机器人后，
@@ -347,13 +347,13 @@ services.AddSingleton<PictureBotAccessors>(sp =>
     var options = sp.GetRequiredService<IOptions<BotFrameworkOptions>>().Value;
     if (options == null)
     {
-        throw new InvalidOperationException("BotFrameworkOptions 必须在设置状态访问器之前进行配置");
+        throw new InvalidOperationException("BotFrameworkOptions must be configured prior to setting up the state accessors");
     }
 
     var conversationState = options.State.OfType<ConversationState>().FirstOrDefault();
     if (conversationState == null)
     {
-        throw new InvalidOperationException("必须先定义和添加 ConversationState，然后才能添加对话范围内的状态访问器。");
+        throw new InvalidOperationException("ConversationState must be defined and added before adding conversation-scoped state accessors.");
     }
 
     // 创建自定义状态访问器。
@@ -491,7 +491,7 @@ namespace Microsoft.PictureBot
 
 * **MainDialog** - 机器人启动时使用的默认对话框。这个对话框将根据用户请求启动其他对话框。作为对话框集的主对话框，这个对话框将负责创建对话框容器，并根据需要将用户重定向到其他对话框。
 
-* **SearchDialog** - 一个对话框，用于管理处理搜索请求并将那些结果返回给用户。 ***注意：**我们将调用这个功能，但不会在本研讨会中实施搜索。*
+* **SearchDialog** - 一个对话框，用于管理处理搜索请求并将那些结果返回给用户。 ***注意：** 我们将调用这个功能，但不会在本研讨会中实施搜索。*
 
 由于我们只有两个对话框，因此可以保持简单，并将它们放在 PictureBot 类中。但是，在复杂的场景中，可能需要将它们拆分到一个文件夹的不同对话框中（类似于我们分离“响应”和“模型”那样）。
 
@@ -779,7 +779,7 @@ services.AddSingleton<ConversationState>(conversationState);
 var conversationState = options.State.OfType<ConversationState>().FirstOrDefault();
 if (conversationState == null)
 {
-    throw new InvalidOperationException("必须先定义和添加 ConversationState，然后才能添加对话范围内的状态访问器。");
+    throw new InvalidOperationException("ConversationState must be defined and added before adding conversation-scoped state accessors.");
 }
 ```
 
@@ -790,7 +790,7 @@ var conversationState = services.BuildServiceProvider().GetService<ConversationS
 
 if (conversationState == null)
 {
-    throw new InvalidOperationException("必须先定义和添加 ConversationState，然后才能添加对话范围内的状态访问器。");
+    throw new InvalidOperationException("ConversationState must be defined and added before adding conversation-scoped state accessors.");
 }
 ```
 
@@ -885,7 +885,7 @@ public async Task<DialogTurnResult> MainMenuAsync(WaterfallStepContext stepConte
 * order pics
 * search pics
   
-> **注意：**如果机器人出现 500 错误，则可以在 **Startup.cs**文件的 **OnTurnError** 委托方法中放置一个断点。  最常见的错误是 AppId 和 AppSecret 不匹配。
+> **注意：** 如果机器人出现 500 错误，则可以在 **Startup.cs**文件的 **OnTurnError** 委托方法中放置一个断点。  最常见的错误是 AppId 和 AppSecret 不匹配。
 
 1. 如果唯一没有提供预期结果的命令是“search pics”，那么一切都是按照你的配置方式运行的。“search pics”失败目前是本实验室的预期行为，但这是为什么呢？请在继续之前提供一个答案！
 

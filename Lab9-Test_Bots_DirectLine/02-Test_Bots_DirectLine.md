@@ -306,7 +306,7 @@ namespace PictureBotDL
 
 1. 请务必在类型处选择 **“GET”**
 
-1. 在 URL 处输入 **“https://directline.botframework.com/api/conversations/{conversationId}/messages”**。 请务必将其中的 converstationId 替换为你的特定对话 ID
+1. 在 URL 处输入 “**https://directline.botframework.com/api/conversations/{conversationId}/messages**”。 请务必将其中的 converstationId 替换为你的特定对话 ID
 
 1. 选择 **“授权”**，在类型处选择 **“持有者令牌”**
 
@@ -326,7 +326,7 @@ namespace PictureBotDL
 
 ## 延伸阅读
 
-有额外的时间吗？能否从终端利用 curl（下载链接：https://curl.haxx.se/download.html）来检索对话（就像对 Postman 执行的操作那样）？
+有额外的时间吗？能否从终端利用 curl（下载链接：https://curl.haxx.se/download.html） 来检索对话（就像对 Postman 执行的操作那样）？
 
 > 提示：命令可能类似于 `curl -H "Authorization:Bearer {SecretKey}" https://directline.botframework.com/api/conversations/{conversationId}/messages -XGET`
 
