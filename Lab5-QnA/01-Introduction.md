@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '实验 5：简介'
     module: '模块 3:使用 QnA Maker 增强机器人'
