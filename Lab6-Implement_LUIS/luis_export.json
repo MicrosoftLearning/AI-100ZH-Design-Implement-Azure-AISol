@@ -1,0 +1,137 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "PictureBotLuisModel",
+  "desc": "",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "OrderPic"
+    },
+    {
+      "name": "SearchPics"
+    },
+    {
+      "name": "SharePic"
+    }
+  ],
+  "entities": [
+    {
+      "name": "facet",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "are there any pictures of",
+      "intent": "SearchPics",
+      "entities": []
+    },
+    {
+      "text": "are there pictures of a train",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "find dog photos",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "find outdoor pics",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "find pictures",
+      "intent": "SearchPics",
+      "entities": []
+    },
+    {
+      "text": "find pictures of food",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "locate a picture",
+      "intent": "SearchPics",
+      "entities": []
+    },
+    {
+      "text": "look for photos",
+      "intent": "SearchPics",
+      "entities": []
+    },
+    {
+      "text": "search for photos of kids playing",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "search pictures",
+      "intent": "SearchPics",
+      "entities": []
+    },
+    {
+      "text": "share a photo",
+      "intent": "SharePic",
+      "entities": []
+    },
+    {
+      "text": "share picture",
+      "intent": "SharePic",
+      "entities": []
+    },
+    {
+      "text": "share to email",
+      "intent": "SharePic",
+      "entities": []
+    },
+    {
+      "text": "share to facebook",
+      "intent": "SharePic",
+      "entities": []
+    },
+    {
+      "text": "show me beach pics",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "show me happy baby pics",
+      "intent": "OrderPic",
+      "entities": []
+    },
+    {
+      "text": "show me pictures of men wearing glasses",
+      "intent": "OrderPic",
+      "entities": []
+    }
+  ],
+  "settings": []
+}

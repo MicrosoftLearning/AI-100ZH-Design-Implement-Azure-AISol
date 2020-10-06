@@ -1,0 +1,14 @@
+{
+  "name": "PictureBot",
+  "secretKey": "",
+  "services": [
+    {
+      "appId": "YourAppId",
+      "id": "http://localhost:3978/api/messages",
+      "type": "endpoint",
+      "appPassword": "YourAppPassword",
+      "endpoint": "http://localhost:3978/api/messages",
+      "name": "PictureBot"
+    }
+  ]
+}
